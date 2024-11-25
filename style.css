@@ -1,0 +1,570 @@
+/* Remover margens de todas as páginas */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Fontes e tipografia */
+  body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #121212;
+    color: #f1f1f1;
+    background-image: url('images/background.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh; /* Garantir que o conteúdo ocupe a altura total */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Para garantir que o conteúdo não sobreponha o topo */
+    text-align: center; /* Centraliza o conteúdo */
+    padding-top: 80px; /* Espaço para o header fixo */
+  }
+  
+  h1, h2, p {
+    font-family: 'Ubuntu', sans-serif;
+  }
+  
+  h1 {
+    font-size: 3rem;
+    color: #f44336;
+    margin-bottom: 20px;
+  }
+  
+  /* Header */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(26, 26, 26, 0.9);
+    padding: 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  }
+  
+  header .logo h1 {
+    margin: 0;
+    font-size: 2rem;
+  }
+  
+  header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  header nav ul li {
+    margin: 0 20px;
+  }
+  
+  header nav ul li a {
+    text-decoration: none;
+    color: #f1f1f1;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+  }
+  
+  header nav ul li a:hover {
+    color: #f44336;
+  }
+  
+  /* Botão de tema claro/escuro */
+  .theme-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: #f1f1f1;
+    cursor: pointer;
+    transition: color 0.3s;
+    padding: 10px;
+    border-radius: 50%;
+  }
+  
+  .theme-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #f44336;
+  }
+  
+  /* Banner */
+  #banner {
+    background: url('images/jujutsu-banner.jpg') center/cover no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+  }
+  
+  #banner .overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  #banner h2 {
+    font-size: 3.5rem;
+    color: #f1f1f1;
+    margin-bottom: 10px;
+  }
+  
+  #banner p {
+    font-size: 1.5rem;
+    color: #ddd;
+  }
+  
+  /* Introdução */
+  #intro {
+    background-color: rgba(26, 26, 26, 0);
+    padding: 50px 20px;
+    margin-top: 100px;
+  }
+  
+  #intro p {
+    font-size: 1.75rem;
+    color: #ccc;
+    line-height: 1.6;
+  }
+  
+ /* Centralizar todo o conteúdo das páginas */
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Botões de interatividade */
+  button {
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #d32f2f;
+  }
+  
+  /* Estilos para listas de personagens e episódios */
+  .characters-list, .episodes-list {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  
+  .character, .episode {
+    background-color: rgba(26, 26, 26, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .character img, .episode img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  .character:hover, .episode:hover {
+    transform: scale(1.05);
+  }
+  
+  .character h3, .episode h3 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+  }
+  
+  .character p, .episode p {
+    font-size: 1.2rem;
+    color: #ddd;
+  }
+  
+  /* Tema Escuro */
+  .dark-theme {
+    background-color: #121212;
+    color: #f1f1f1;
+  }
+  
+  .dark-theme header {
+    background-color: #1a1a1a;
+  }
+  
+  .dark-theme .theme-toggle {
+    color: #f1f1f1;
+  }
+  
+  /* Transições de tema */
+  .dark-theme #banner .overlay {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  .dark-theme #intro {
+    background-color: #333;
+  }
+  
+  .dark-theme header nav ul li a {
+    color: #f1f1f1;
+  }
+  
+  .dark-theme header nav ul li a:hover {
+    color: #f44336;
+  }
+  /* Estilos para a página de Contato */
+#contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    max-width: 900px;
+    margin: 180px auto;
+    background-color: rgba(26, 26, 26, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    text-align: center;
+  }
+  
+  #contact h2 {
+    font-size: 2.5rem;
+    color: #f44336;
+    margin-bottom: 20px;
+  }
+  
+  #contact p {
+    font-size: 1.2rem;
+    color: #ddd;
+    margin-bottom: 30px;
+  }
+  
+  /* Estilos do formulário */
+  #contact-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .input-container {
+    position: relative;
+  }
+  
+  input, textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #f44336;
+    border-radius: 10px;
+    background-color: #222;
+    color: #fff;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+  }
+  
+  input:focus, textarea:focus {
+    border-color: #f1f1f1;
+    outline: none;
+    background-color: #333;
+  }
+  
+  textarea {
+    height: 150px;
+    resize: none;
+  }
+  
+  button {
+    background-color: #f44336;
+    color: #fff;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+  }
+  
+  button:hover {
+    background-color: #d32f2f;
+    transform: translateY(-3px);
+  }
+  
+  /* Efeitos interativos */
+  input:hover, textarea:hover {
+    border-color: #f1f1f1;
+    background-color: #333;
+  }
+  
+  input::placeholder, textarea::placeholder {
+    color: #bbb;
+    font-style: italic;
+  }
+  
+  input:focus::placeholder, textarea:focus::placeholder {
+    color: #f44336;
+  }
+  
+  button:active {
+    transform: translateY(2px);
+  }
+  
+  button:focus {
+    outline: none;
+  }
+  
+  /* Estilos do botão de alternância de tema */
+  .theme-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: #f1f1f1;
+    cursor: pointer;
+    transition: color 0.3s;
+    padding: 10px;
+    border-radius: 50%;
+  }
+  
+  .theme-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #f44336;
+  }
+  /* Estilos para a seção de personagens */
+#characters {
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: 50px auto;
+    text-align: center;
+  }
+  
+  #characters h2 {
+    font-size: 2.5rem;
+    color: #f44336;
+    margin-bottom: 30px;
+  }
+  
+  .characters-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  
+  .character-card {
+    background-color: rgba(26, 26, 26, 0.8);
+    border-radius: 15px;
+    padding: 20px;
+    max-width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+  }
+  
+  .character-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .character-card img {
+    width: 100%;
+    border-radius: 10px;
+    max-height: 350px;
+    object-fit: cover;
+    transition: all 0.3s ease;
+  }
+  
+  .character-card img:hover {
+    transform: scale(1.05);
+  }
+  
+  .character-card h3 {
+    font-size: 1.8rem;
+    color: #f44336;
+    margin-top: 15px;
+  }
+  
+  .character-card p {
+    font-size: 1rem;
+    color: #ddd;
+    margin-top: 10px;
+  }
+  
+  .btn-details {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #f44336;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-details:hover {
+    background-color: #d32f2f;
+    text-decoration: none;
+  }
+  
+  .btn-details:focus {
+    outline: none;
+  }
+  
+  /* Efeitos interativos nos cards */
+  .character-card:hover .btn-details {
+    background-color: #d32f2f;
+    transform: translateY(-3px);
+  }
+  /* Estilos para a página de detalhes do personagem */
+#character-detail {
+  padding: 50px 20px;
+  max-width: 1000px;
+  margin: 50px auto;
+  background-color: rgba(26, 26, 26, 0.8);
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.character-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.character-header img {
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.character-header img:hover {
+  transform: scale(1.05);
+}
+
+.character-info h2 {
+  font-size: 2.5rem;
+  color: #f44336;
+  margin-bottom: 10px;
+}
+
+.character-info .role {
+  font-size: 1.2rem;
+  color: #ddd;
+}
+
+.character-description {
+  margin-top: 30px;
+  text-align: left;
+}
+
+.character-description h3 {
+  font-size: 2rem;
+  color: #f44336;
+  margin-bottom: 10px;
+}
+
+.character-description p {
+  font-size: 1.2rem;
+  color: #ddd;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.btn-back {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #f44336;
+  color: #fff;
+  font-size: 1.2rem;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-back:hover {
+  background-color: #d32f2f;
+}
+
+.theme-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: #f1f1f1;
+  cursor: pointer;
+  transition: color 0.3s;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.theme-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #f44336;
+}
+/* Configuração geral para todas as páginas */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* Fundo para a página inicial */
+body[data-page="index"] {
+  background-image: url('images/background-index.jpg');
+}
+
+/* Fundo para a página de personagens */
+body[data-page="characters"] {
+  background-image: url('images/background-characters.jpg');
+}
+
+/* Fundo para a página de episódios */
+body[data-page="episodes"] {
+  background-image: url('images/background-episodes.jpg');
+}
+
+/* Fundo para a página de contato */
+body[data-page="contact"] {
+  background-image: url('images/background-contact.jpg');
+}
+
+main, section {
+  /* Remova ou comente a linha abaixo */
+  /* background: rgba(0, 0, 0, 0.8); */
+
+  /* Ajuste para centralizar o conteúdo e estilizar */
+  margin: 100px auto;
+  
+}
+
+
